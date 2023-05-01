@@ -17,12 +17,10 @@ function saveMsg() {
   const { email, message } = form.elements;
   const formValueObj = JSON.parse(localStorage.getItem('feedback-form-state'));
 
-  if (formValueObj) {
-    formValue.email = formValueObj.email || '';
-    formValue.message = formValueObj.message || '';
-    email.value = formValueObj.email || '';
-    message.value = formValueObj.message || '';
-  }
+  formValue.email = formValueObj?.email || '';
+  formValue.message = formValueObj?.message || '';
+  email.value = formValueObj?.email || '';
+  message.value = formValueObj?.message || '';
 }
 
 saveMsg();
